@@ -1,0 +1,21 @@
+from django.db import models
+
+class MyModelName(models.Model):
+
+    # Fields
+    my_field_name = models.CharField(max_length=20, help_text='請輸入欄位文字')
+    title = models.CharField(max_length=200)
+    public_date = models.DateTimeField(default=timezone.now)
+    
+    # Metadata
+    class Meta: 
+        ordering = ['-my_field_name']
+
+    # Methods
+    def get_absolute_url(self):
+        return reverse('model-detail-view', args=[str(self.id)])
+    
+    def __str__(self):
+        return self.my_field_name
+        
+        
