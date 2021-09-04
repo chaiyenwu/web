@@ -25,7 +25,6 @@ class Car(Vehicle):
 myCar=Car("特斯拉","磁電Engine","電力")
 myCar.getAuto()
 print(myCar.getEngine())
-print(Vehicle.getEngine())
         
         
         
